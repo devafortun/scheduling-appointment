@@ -10,3 +10,11 @@ def get_calendar_service():
     service = build("calendar", "v3", credentials=creds)
     return service
 
+def create_event():
+    service = get_calendar_service()
+    event = {
+        'summary': 'Doctor Appointment',
+        'start': {'dateTime': '2025-04-14T10:00:00+08:00', 'timeZone': 'Asia/Manila'},
+        'end': {'dateTime': '2025-04-14T10:30:00+08:00', 'timeZone': 'Asia/Manila'}
+    }
+    service.events().insert(calendarId='primary', body=event).execute()
