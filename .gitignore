@@ -1,0 +1,4 @@
+/venv
+/chatbot-frontend/node_modules
+
+credentials.json
